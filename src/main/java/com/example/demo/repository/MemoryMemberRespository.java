@@ -1,6 +1,6 @@
 package com.example.demo.repository;
 
-import com.example.demo.domian.Member;
+import com.example.demo.domain.Member;
 
 import java.util.*;
 

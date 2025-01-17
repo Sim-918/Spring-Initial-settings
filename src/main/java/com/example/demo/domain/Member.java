@@ -1,4 +1,6 @@
-package com.example.demo.domian;
+package com.example.demo.domain;
+
+//회원정보를 나타내는 패키지
 
 public class Member {
     private Long id;
