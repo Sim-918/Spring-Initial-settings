@@ -1,11 +1,13 @@
 package com.example.demo.repository;
 
 import com.example.demo.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
 // 회원 정보를 메모리에 저장하고 관리하는 클래스
 // MemberRepository 인터페이스를 구현하여 회원 관련 데이터 관리 기능을 제공함
+@Repository
 public class MemoryMemberRespository implements MemberRepository {
 
     // 회원 정보를 저장하는 HashMap

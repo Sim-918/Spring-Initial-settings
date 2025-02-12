@@ -3,10 +3,13 @@ package com.example.demo.service;
 import com.example.demo.domain.Member;
 import com.example.demo.repository.MemberRepository;
 import com.example.demo.repository.MemoryMemberRespository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
 
     // MemberRepository 인터페이스를 구현한 MemoryMemberRepository 객체를 생성 (기존 코드)
@@ -15,7 +18,7 @@ public class MemberService {
 
     // 의존성을 외부에서 주입받도록 변경 (DI: Dependency Injection)
     private final MemberRepository memberRepository;
-
+    @Autowired
     // 생성자를 통해 MemberRepository를 주입받음 → 유연성이 증가함
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;

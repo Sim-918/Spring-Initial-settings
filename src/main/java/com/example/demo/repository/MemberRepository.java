@@ -4,6 +4,8 @@ import com.example.demo.domain.Member;
 import java.util.Optional;
 import java.util.List;
 
+
+
 //Optional->null값을 안전하게 객체로 감싸고 변환
 public interface MemberRepository {
 //    회원 저장 메서드: Member 객체를 받아 저장하고, 저장된 Member 객체를 반환
