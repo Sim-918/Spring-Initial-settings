@@ -9,8 +9,17 @@ import java.util.Optional;
 
 public class MemberService {
 
-    // MemberRepository 인터페이스를 구현한 MemoryMemberRepository 객체를 생성
-    private final MemberRepository memberRepository = new MemoryMemberRespository();
+    // MemberRepository 인터페이스를 구현한 MemoryMemberRepository 객체를 생성 (기존 코드)
+    // private final MemberRepository memberRepository = new MemoryMemberRespository();
+    // 위 방식은 고정된 저장소를 사용하게 되어 테스트 시 다른 저장소를 주입하기 어려움 (유연성이 부족함)
+
+    // 의존성을 외부에서 주입받도록 변경 (DI: Dependency Injection)
+    private final MemberRepository memberRepository;
+
+    // 생성자를 통해 MemberRepository를 주입받음 → 유연성이 증가함
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     /*
      * 회원가입 메서드
