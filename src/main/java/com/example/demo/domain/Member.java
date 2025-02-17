@@ -1,5 +1,6 @@
 package com.example.demo.domain; // 회원 정보를 저장하는 도메인 패키지
 
+//DB table
 // 회원(Member) 정보를 담는 클래스
 public class Member {
     private Long id;  // 회원의 고유 ID
