@@ -1,3 +1,5 @@
+-- JDBD URL:jdbc:h2:tcp://localhost/~/test
+
  drop table if exists member CASCADE;
  create table member
  (
