@@ -11,8 +11,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * MemoryMemberRepositoryTest 클래스
- * - MemoryMemberRepository의 기능을 테스트하는 JUnit 테스트 클래스입니다.
- * - 저장, 조회, 전체 조회 기능을 검증합니다.
+ * - MemoryMemberRepository의 기능을 테스트하는 JUnit 단위 테스트 클래스입니다.
+ * - 단위 테스트(Unit Test)로, 데이터베이스 없이 메모리 저장소에서 동작 확인 가능
+ * - 회원 저장, 조회, 전체 조회 기능을 검증합니다.
  */
 
 class MemoryMemberRespositoryTest {
