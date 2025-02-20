@@ -8,8 +8,11 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
+//순수 JDBC코드이다. (jdbcTemplatememberrepository 코드가 jdbctemplate를 사용하는 코드)
 // JdbcMemberRepository는 MemberRepository 인터페이스를 구현하여
 // JDBC를 통해 데이터베이스와 직접 연동하는 클래스
+
 public class JdbcMemberRepository implements MemberRepository {
 
     // DataSource를 통해 DB 커넥션을 관리

@@ -14,6 +14,13 @@ import org.springframework.transaction.annotation.Transactional;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+/**
+ * MemberServiceIntegrationTest 클래스
+ * - 회원 서비스(MemberService) 전체 기능을 검증하는 통합 테스트(Integration Test)
+ * - 실제 DB와 연결하여 테스트 진행
+ * - 데이터 정합성을 유지하기 위해 @Transactional을 사용하여 테스트 후 롤백 처리
+ */
+
 @SpringBootTest // 스프링 컨텍스트를 로드하여 테스트 (스프링 빈 자동 주입)
 @Transactional // 테스트 실행 후 DB에 실제로 데이터가 저장되지 않고 롤백됨
 class MemberServiceIntegrationTest {

@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import com.example.demo.repository.JdbcMemberRepository;
+import com.example.demo.repository.JdbcTemplateMemberRepository;
 import com.example.demo.repository.MemberRepository;
 import com.example.demo.repository.MemoryMemberRespository;
 import com.example.demo.service.MemberService;
@@ -30,8 +31,12 @@ public class SpringConfig {
         // 기존 메모리 기반 저장소 사용 코드 (주석 처리됨)
         // return new MemoryMemberRespository();
 
-        // 현재는 DB 기반 저장소(JDBC 사용)로 변경
-        return new JdbcMemberRepository(dataSource);
+        // DB 기반 저장소(손수 JDBC 사용)로 변경
+        // return new JdbcMemberRepository(dataSource);
+
+        // JDBCtemplate 사용
+        return new JdbcTemplateMemberRepository(dataSource);
+
     }
 
 }
