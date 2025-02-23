@@ -20,7 +20,8 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-starter-jdbc' //JDBC 라이브러리
+//	implementation 'org.springframework.boot:spring-boot-starter-jdbc' //JDBC 라이브러리
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa' //JPA는 내부적으로 JDBC를 활용하여 SQL을 실행하기 때문에, 이 의존성 하나만 추가하면 JPA와 JDBC를 모두 사용할 수 있다
 	runtimeOnly 'com.h2database:h2' //H2 데이터 베이스 라이브러리
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'

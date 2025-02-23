@@ -5,11 +5,12 @@ import com.example.demo.repository.MemberRepository;
 import com.example.demo.repository.MemoryMemberRespository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
-
+@Transactional // 테스트 실행 후 DB에 실제로 데이터가 저장되지 않고 롤백됨
 public class MemberService {
 
     // MemberRepository 인터페이스를 구현한 MemoryMemberRepository 객체를 생성 (기존 코드)
