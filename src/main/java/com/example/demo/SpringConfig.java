@@ -30,16 +30,25 @@ public class SpringConfig {
 //    }
 
     // EntityManager를 JPA가 자동으로 주입 (JPA 표준 주입)
-    @PersistenceContext
-    private EntityManager em;
+//    @PersistenceContext
+//    private EntityManager em;
+
+
+    // 스프링데이터 jpa
+    private final MemberRepository memberRepository;
+
+    @Autowired
+    public SpringConfig(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     @Bean // 스프링 컨테이너에 MemberService 객체를 생성하여 빈(Bean)으로 등록
     public MemberService memberService() {
-        return new MemberService(memberRepository()); // MemberService가 MemberRepository를 의존하도록 설정
+        return new MemberService(memberRepository); // MemberService가 MemberRepository를 의존하도록 설정
     }
 
-    @Bean // 스프링 컨테이너에 MemberRepository 객체를 생성하여 빈(Bean)으로 등록
-    public MemberRepository memberRepository() {
+//    @Bean // 스프링 컨테이너에 MemberRepository 객체를 생성하여 빈(Bean)으로 등록
+//    public MemberRepository memberRepository() {
         // 기존 메모리 기반 저장소 사용 코드 (주석 처리됨)
         // return new MemoryMemberRespository();
 
@@ -50,8 +59,9 @@ public class SpringConfig {
         // return new JdbcTemplateMemberRepository(dataSource);
 
         //JPA 사용
-        return new JpaMemberRepository(em);
+        // return new JpaMemberRepository(em);
 
-    }
+
+//    }
 
 }
